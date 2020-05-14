@@ -134,8 +134,8 @@ def connect():
 #####              Meme-ChIP               #####
 ################################################
 @follows(connect)
-@transform("data.dir/*.peaks.bed",
-           regex(r"(.*).peaks.bed"),
+@transform("data.dir/*.bed",
+           regex(r"(.*).bed"),
            r"\1.meme.bed")
 def peakSummit(infile, outfile):
     '''Make bed of peak_summit (+/- 1bp), sorted by peak qvalue'''
